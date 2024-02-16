@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 
 from tweedehands.pipelines import GueuzeOnlyFilter
 
@@ -32,7 +33,7 @@ TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 PLAYWRIGHT_PROCESS_REQUEST_HEADERS = None
 
 FEEDS = {
-    "./data/data.jsonl": {
+    "./data/data.json": {
         "format": "jsonlines",
         "overwrite": False,
         "item_filter": GueuzeOnlyFilter,
