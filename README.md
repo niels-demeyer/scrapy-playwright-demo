@@ -10,7 +10,7 @@
 
 ## 📖 Introduction
 
-Welcome to my GitHub repository, where we blend the strengths of Scrapy with the versatility of Playwright for 
+Welcome to my GitHub repository, where we blend the strengths of Scrapy with the speed and simplicity of Playwright for 
 advanced web scraping. My journey began with an interest in combining Selenium and Scrapy to tackle JavaScript-heavy 
 websites. As a testcase I will make the program log in to my [2dehands.be](https://www.2dehands.be/) account and scrape 
 the saved searches for my user. (you can have a peak in the screenshot below) 
@@ -161,7 +161,11 @@ purpose only. Run at your own risk.
 I had to log in to [2dehands.be](https://www.2dehands.be/) the first time with 2fa. But once it knows my IP the 2fa is not needed anymore and playwright could log in with 1 step.
 If you do think you are experiencing issues, make sure to check the screenshots' folder. It will have screenshot before and after the login.
 
-### Connect with me!
+## Connect with me!
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gerrit-geeraerts-143488141)
 [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/10213635/gerrit-geeraerts)
 [![Ask Ubuntu](https://img.shields.io/badge/-Askubuntu-dd4814?style=for-the-badge&logo=ubuntu&logoColor=white)](https://askubuntu.com/users/1097288/gerrit-geeraerts)
+
+## Links
+
+[The Python Scrapy Playbook | ScrapeOps](https://scrapeops.io/python-scrapy-playbook/): I found lots of great info here.
