@@ -1,0 +1,5 @@
+beautifulsoup4==4.12.*
+lxml==5.1.*
+playwright==1.41.*
+Scrapy==2.11.*
+scrapy-playwright==0.0.34
