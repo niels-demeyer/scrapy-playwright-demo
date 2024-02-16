@@ -8,7 +8,7 @@
 
 ## 📖 Introduction
 
-Welcome to our GitHub repository, where we blend the strengths of Scrapy with the versatility of Playwright for 
+Welcome to my GitHub repository, where we blend the strengths of Scrapy with the versatility of Playwright for 
 advanced web scraping. My journey began with an interest in combining Selenium and Scrapy to tackle JavaScript-heavy 
 websites. As a testcase I will make the program log in to my 2dehands.be account and scrape the saved searches for my user. 
 For a more efficient approach I came across Splash an alternative to Scrapy, which uses fewer resources and is easier to 

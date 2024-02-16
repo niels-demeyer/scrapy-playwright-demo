@@ -14,7 +14,9 @@ class TweedeHandsSpider(scrapy.Spider):
     name = 'tweedehands'
 
     def start_requests(self):
-        screenhot_path = os.path.join(screenshot, "after_login.png")
+        print('########\n'*20)
+        print(TWEEDHANDS_USERNAME)
+        print(TWEEDHANDS_PASSWORD)
         url = "https://www.2dehands.be/account/login.html?target=https%3A%2F%2Fwww.2dehands.be%2F"
         yield scrapy.Request(
             url,
@@ -28,15 +30,16 @@ class TweedeHandsSpider(scrapy.Spider):
                     PageMethod('screenshot', path=os.path.join(screenshot, "before_login.png"), full_page=True),
                     PageMethod('fill', 'input[name=j_username]', value=TWEEDHANDS_USERNAME),
                     PageMethod('fill', 'input[name=j_password]', value=TWEEDHANDS_PASSWORD),
+                    PageMethod('screenshot', path=os.path.join(screenshot, "about_to_login.png"), full_page=True),
                     PageMethod('click', '#account-login-button'),
                     PageMethod('wait_for_timeout', 10000),
                     PageMethod('screenshot', path=os.path.join(screenshot, "after_login.png"), full_page=True),
                 ],
-
             )
         )
 
     async def logged_in(self, response):
+        print('########loggedin\n'*20)
         page = response.meta["playwright_page"]
         await page.close()
         yield scrapy.Request(
@@ -68,11 +71,12 @@ class TweedeHandsSpider(scrapy.Spider):
                     playwright_include_page=True,
                     playwright_page_methods=[
                         PageMethod('wait_for_timeout', 10000),
-                        PageMethod(
-                            'screenshot',
-                            path=os.path.join(screenshot, f"my-searh-list-{counter}.png"),
-                            full_page=True
-                        ),
+                        # take a screenshot for debugging
+                        # PageMethod(
+                        #     'screenshot',
+                        #     path=os.path.join(screenshot, f"my-searh-list-{counter}.png"),
+                        #     full_page=True
+                        # ),
                     ],
                     errback=self.errback,
                 )
@@ -112,11 +116,12 @@ class TweedeHandsSpider(scrapy.Spider):
                 playwright_include_page=True,
                 playwright_page_methods=[
                     PageMethod('wait_for_timeout', 10000),
-                    # generate a random number to avoid overwriting the same file
-                    PageMethod(
-                        'screenshot',
-                        path=os.path.join(screenshot, f"next-page-{random()}.png"),
-                        full_page=True),
+                    # take a screenshot for debugging
+                    # PageMethod(
+                    #     'screenshot',
+                    #     path=os.path.join(screenshot, f"next-page-{random()}.png"),
+                    #     full_page=True
+                    #     ),
                 ],
                 errback=self.errback,
             )
