@@ -138,10 +138,10 @@ asyncio.run(main())
 ### Conclusion
 > When it comes to web crawling, Playwright truly "plays right" into developers' hands with its simplicity and power.
 
-Is Selenium left behind than? In a lot of ways yes. But Selenium still has its strength a broader support for different 
-browsers and a solid community. Also alot of projects are already build on Selenium, and turning a project that is head 
-deep in Selenium might not compensate the benefits of Playwright. Especially not in Software Testing as Selenium has 
-broader browser support. So I would highly recommend tinkering around with Playwright if you are into scraping.
+Is Selenium left behind than? In a lot of ways yes. But Selenium still has its strength especially for software testing 
+as it has a broader support and a solid community and foundation. Also, alot of projects are already build on Selenium, 
+and turning a project that is head deep in Selenium will probably not compensate the benefits of Playwright. If you are 
+into web scraping So I would highly recommend playing around with Playwright.
 
 ## ⏱️ Timeline
 In the course of developing this project, I dedicated two full days not just to building but also to research 
