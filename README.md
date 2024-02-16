@@ -3,6 +3,8 @@
 ![Scrapy](https://img.shields.io/badge/scrapy-50962d?style=for-the-badge&logo=scrapy&logoColor=white)
 ![Playwright](https://img.shields.io/badge/Playwright-2b3137?style=for-the-badge&logo=playwright&logoColor=orange)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+
 
 ![Scrapy and Playwright](./assets/scrapy-playwright.png)
 
@@ -10,11 +12,11 @@
 
 Welcome to my GitHub repository, where we blend the strengths of Scrapy with the versatility of Playwright for 
 advanced web scraping. My journey began with an interest in combining Selenium and Scrapy to tackle JavaScript-heavy 
-websites. As a testcase I will make the program log in to my 2dehands.be account and scrape the saved searches for my user. 
-For a more efficient approach I came across Splash an alternative to Scrapy, which uses fewer resources and is easier to 
-install and run with a docker. However, Splash lead me to a dead corner as it was unable to handle javascript heavy 
-websites. Going back to the research table this led me to discover Playwright. Unlike Splash, Playwright excels in 
-handling complex JavaScript, offering easy installation, robust performance, and clear syntax. 
+websites. As a testcase I will make the program log in to my [2dehands.be](https://www.2dehands.be/) account and scrape 
+the saved searches for my user. (you can have a peak in the screenshot below) 
+Before starting the project, I wandered a bit around on github and discovered Playwright. It skyrocketed in popularity 
+in the last 4 years. In the [Why Playwrigh? Is Selenium left behind?](#why-playwright-is-selenium-left-behind) section 
+I go into more detail about this.
 
 ## 📦 Repo structure
 ```
@@ -76,34 +78,87 @@ You can find the result in `data/data.jsonl`
 ## Screenshot
 ![Screenshot](./assets/my_searches.png)
 
-## Playwright Splash and Selenium
+## Why Playwright? Is Selenium left behind?
 Github stars don't say everything but they do give an indication of the popularity of a project. Below you can see the
-history of the `Scrapy` and `Playwright` projects and some of their siblings: `Selenium` and `Splash`.
-In the Github repo of `Splash` I found a lot of open issues about the inability to run `javascript` heavy websites. 
-In my limited experience with `playwright` and `Splash` I found that `Playwright` is a better alternative to `Splash`. 
-It is easier to install and run, and it is more robust in handling complex `JavaScript`. `Selenium` remains a tough 
-competitor, but I have become a fan of the simplicity of `Playwright`.
+history of the `Scrapy` and `Playwright` projects and some of their siblings: `Selenium`. In my limited experience with 
+`Playwright` I found that `Playwright` is very easy to Install and use. No more wedrivers to manage and or install.
+It supports async which and is faster. The code code is more readable and easier and less tedious because there is an 
+auto waiting for elements. Below I made 2 sample scripts that log in to reddit. 1 in `Selenium` and 1 in `Playwright`.
+### Selenium code example
+```python
+# selenium example - illustrative dummy code
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
-> When it comes to web crawling, Playwright truly "plays right" into developers' hands with its simplicity and power.
+
+driver_path = '/path/to/your/webdriver'
+driver = webdriver.Chrome(driver_path)
+driver.get('https://www.reddit.com/login/')
+
+username_field = WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.ID, "loginUsername"))
+)
+username_field.send_keys('your_username')
+password_field = WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.ID, "loginPassword"))
+)
+password_field.send_keys('your_password')
+login_button = WebDriverWait(driver, 10).until(
+    EC.element_to_be_clickable((By.XPATH, '//button[contains(text(), "Log In")]'))
+)
+login_button.click()
+```
+### Playwright code example
+```python
+# playwright example - illustrative dummy code
+import asyncio
+from playwright.async_api import async_playwright
+
+
+async def main():
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        page = await browser.new_page()
+
+        await page.goto('https://www.reddit.com/login/')
+        await page.fill('input#loginUsername', 'your_username')
+        await page.fill('input#loginPassword', 'your_password')
+        await page.click('button[type="submit"]')
+        await browser.close()
+
+asyncio.run(main())
+```
 
 ### Github star history
-[![Star History Chart](https://api.star-history.com/svg?repos=microsoft/playwright,scrapinghub/splash,SeleniumHQ/selenium,scrapy/scrapy&type=Date)](https://star-history.com/#microsoft/playwright&scrapinghub/splash&SeleniumHQ/selenium&scrapy/scrapy&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=microsoft/playwright,SeleniumHQ/selenium,scrapy/scrapy&type=Date)](https://star-history.com/#microsoft/playwright&SeleniumHQ/selenium&scrapy/scrapy&Date)
+
+### Conclusion
+> When it comes to web crawling, Playwright truly "plays right" into developers' hands with its simplicity and power.
+
+Is Selenium left behind than? In a lot of ways yes. But Selenium still has its strength a broader support for different 
+browsers and a solid community. Also alot of projects are already build on Selenium, and turning a project that is head 
+deep in Selenium might not compensate the benefits of Playwright. Especially not in Software Testing as Selenium has 
+broader browser support. So I would highly recommend tinkering around with Playwright if you are into scraping.
 
 ## ⏱️ Timeline
-In the course of developing this project, I dedicated two full days not just to building but also to immersive research 
-and exploration of libraries that could enhance its functionality.
+In the course of developing this project, I dedicated two full days not just to building but also to research 
+and explore libraries.
 
 ## 📌 Personal Situation
 My enthusiasm for initiating a project with Scrapy and Selenium was so intense that it inadvertently bypassed the 
-crucial step of preparing good by doing research first. So I dived into this project head first! Because of this I 
-worked less efficient and spent more time on libraries that are not suitable anymore for a modern single page applications.
+crucial step of preparing: do your research first!. So I dived into this project head first! Because of this I rotated 
+half way the project from Selenium to Playwright.
+Note to self: Always do your research first! No matter how excited you are about a project!
 
 ## Disclaimer
 The actions performed by the program do not abide by the robots.txt of 2dehands.be, this project is ment for educational 
 purpose only. Run at your own risk.
 
 ## Possible issues
-I had to log in to 2de hands the first time with 2fa. But once it knows my IP the 2fa is not needed anymore and playwright could log in with 1 step.
+I had to log in to [2dehands.be](https://www.2dehands.be/) the first time with 2fa. But once it knows my IP the 2fa is not needed anymore and playwright could log in with 1 step.
 If you do think you are experiencing issues, make sure to check the screenshots' folder. It will have screenshot before and after the login.
 
 ### Connect with me!
