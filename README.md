@@ -3,7 +3,7 @@
 ![Scrapy](https://img.shields.io/badge/scrapy-50962d?style=for-the-badge&logo=scrapy&logoColor=white)
 ![Playwright](https://img.shields.io/badge/Playwright-2b3137?style=for-the-badge&logo=playwright&logoColor=orange)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+![Selenium](https://img.shields.io/badge/-selenium-aeaeae?style=for-the-badge&logo=selenium&logoColor=white)
 
 
 ![Scrapy and Playwright](./assets/scrapy-playwright.png)
@@ -153,19 +153,19 @@ crucial step of preparing: do your research first!. So I dived into this project
 half way the project from Selenium to Playwright.
 Note to self: Always do your research first! No matter how excited you are about a project!
 
-## Disclaimer
+## 🚫 Disclaimer
 The actions performed by the program do not abide by the robots.txt of 2dehands.be, this project is ment for educational 
 purpose only. Run at your own risk.
 
-## Possible issues
+## ⚡ Possible issues
 I had to log in to [2dehands.be](https://www.2dehands.be/) the first time with 2fa. But once it knows my IP the 2fa is not needed anymore and playwright could log in with 1 step.
 If you do think you are experiencing issues, make sure to check the screenshots' folder. It will have screenshot before and after the login.
 
-## Connect with me!
+## 🤝 Connect with me!
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gerrit-geeraerts-143488141)
 [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/10213635/gerrit-geeraerts)
 [![Ask Ubuntu](https://img.shields.io/badge/-Askubuntu-dd4814?style=for-the-badge&logo=ubuntu&logoColor=white)](https://askubuntu.com/users/1097288/gerrit-geeraerts)
 
-## Links
+## 🔗 Links
 
 [The Python Scrapy Playbook | ScrapeOps](https://scrapeops.io/python-scrapy-playbook/): I found lots of great info here.
