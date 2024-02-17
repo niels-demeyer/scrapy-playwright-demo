@@ -1,2 +1,5 @@
 /data/*
+!/data/.gitkeep
+
 /log/screenshots/*
+!/log/screenshots/.gitkeep
