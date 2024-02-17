@@ -26,6 +26,8 @@ DOWNLOAD_HANDLERS = {
     "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
 }
 
+REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
+
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
 PLAYWRIGHT_PROCESS_REQUEST_HEADERS = None
@@ -39,11 +41,14 @@ PLAYWRIGHT_CONTEXTS = {
     },
 }
 
+# default feed exporting
+FEED_EXPORT_ENCODING = "utf-8"
+
 FEEDS = {
     './data/data.jsonl': {
         'format': 'jsonlines',
         'overwrite': False,
-        # 'item_filter': GueuzeOnlyFilter,  # uncomment this line if you want to filter the items
+        # 'item_filter': GueuzeOnlyFilter,  # uncomment this line if you want to use the GueuzeOnlyFilter
         'encoding': 'utf8',
     },
 }
@@ -128,9 +133,6 @@ ITEM_PIPELINES = {
 # HTTPCACHE_STORAGE = "scrapy.extensions.httpcache.FilesystemCacheStorage"
 
 # Set settings whose default value is deprecated to a future-proof value
-REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
-TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
-FEED_EXPORT_ENCODING = "utf-8"
 
 # PLAYWRIGHT_BROWSER_TYPE = "firefox"
 # PLAYWRIGHT_LAUNCH_OPTIONS = {
