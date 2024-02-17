@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 ### Add some saved searches
 Go to [2dehands.be](https://www.2dehands.be) log in and save some searches. You can find them in the 
-"Mijn Zoekopdracten" section.
+"Mijn Zoekopdrachten" section.
 
 ### Configure the environment variables
 
@@ -73,16 +73,19 @@ scrapy crawl tweedehands
 ```
 
 ### Result
-
-You can find the result in `data/data.jsonl` 
+You can find the result in `data/data.jsonl`
+You can look at [example_data.jsonl](/assets/example_data.jsonl)
+### Optional
+If you are also a `Geuze` fan, and you are also looking for `Geuze`, than you can activate the `GueuzeOnlyFilter` 
+in the `settings.py` file in the `FEEDS` section. Or go ahead and create your own filter.
 ## Screenshot
 ![Screenshot](./assets/my_searches.png)
 
 ## Why Playwright? Is Selenium left behind?
 Github stars don't say everything but they do give an indication of the popularity of a project. Below you can see the
 history of the `Scrapy` and `Playwright` projects and some of their siblings: `Selenium`. In my limited experience with 
-`Playwright` I found that `Playwright` is very easy to Install and use. No more wedrivers to manage and or install.
-It supports async which and is faster. The code code is more readable and easier and less tedious because there is an 
+`Playwright` I found that `Playwright` is very easy to Install and use. No more webdrivers to manage and or install.
+It supports async which is faster. The code is more readable and easier and less tedious because there is an 
 auto waiting for elements. Below I made 2 sample scripts that log in to reddit. 1 in `Selenium` and 1 in `Playwright`.
 ### Selenium code example
 ```python
@@ -139,9 +142,9 @@ asyncio.run(main())
 > When it comes to web crawling, Playwright truly "plays right" into developers' hands with its simplicity and power.
 
 Is Selenium left behind than? In a lot of ways yes. But Selenium still has its strength especially for software testing 
-as it has a broader support and a solid community and foundation. Also, alot of projects are already build on Selenium, 
+as it has a broader support and a solid community and foundation. Also, a lot of projects are already build on Selenium, 
 and turning a project that is head deep in Selenium will probably not compensate the benefits of Playwright. If you are 
-into web scraping So I would highly recommend playing around with Playwright.
+into web scraping than I would highly recommend playing around with Playwright.
 
 ## ⏱️ Timeline
 In the course of developing this project, I dedicated two full days not just to building but also to research 
