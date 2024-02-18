@@ -36,7 +36,7 @@ FEEDS = {
     "./data/data.json": {
         "format": "jsonlines",
         "overwrite": False,
-        "item_filter": GueuzeOnlyFilter,
+        # "item_filter": GueuzeOnlyFilter,
         "encoding": "utf8",
     },
 }
