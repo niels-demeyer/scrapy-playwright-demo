@@ -56,6 +56,9 @@ class TweedehandsPipeline:
                 value = soup.get_text()
                 adapter[field_name] = value.strip()
 
+            # clean the url
             if field_name == 'url':
                 value = adapter[field_name] if adapter[field_name] else ''
                 adapter[field_name] = value
+
+        return item

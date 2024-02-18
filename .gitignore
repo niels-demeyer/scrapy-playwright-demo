@@ -1,3 +1,11 @@
+<<<<<<< HEAD
 .env
 *.png
 *.json
+=======
+/data/*
+!/data/.gitkeep
+
+/log/screenshots/*
+!/log/screenshots/.gitkeep
+>>>>>>> 1cc9898c2d14864dbba4575a89900cfed221a3d2

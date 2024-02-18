@@ -28,11 +28,26 @@ DOWNLOAD_HANDLERS = {
     "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
 }
 
+REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
+
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
 PLAYWRIGHT_PROCESS_REQUEST_HEADERS = None
 
+PLAYWRIGHT_CONTEXTS = {
+    "default": {
+        "viewport": {
+            "width": 1920,
+            "height": 2160,
+        },
+    },
+}
+
+# default feed exporting
+FEED_EXPORT_ENCODING = "utf-8"
+
 FEEDS = {
+<<<<<<< HEAD
     "./data/data.json": {
         "format": "jsonlines",
         "overwrite": False,
@@ -43,6 +58,20 @@ FEEDS = {
 
 TWEEDHANDS_USERNAME = get_env_variable("TWEEDHANDS_USERNAME")
 TWEEDHANDS_PASSWORD = get_env_variable("TWEEDHANDS_PASSWORD")
+=======
+    './data/data.jsonl': {
+        'format': 'jsonlines',
+        'overwrite': False,
+        # 'item_filter': GueuzeOnlyFilter,  # uncomment this line if you want to use the GueuzeOnlyFilter
+        'encoding': 'utf8',
+    },
+}
+
+LOG_LEVEL = 'INFO'
+
+TWEEDHANDS_USERNAME = get_env_variable('TWEEDHANDS_USERNAME')
+TWEEDHANDS_PASSWORD = get_env_variable('TWEEDHANDS_PASSWORD')
+>>>>>>> 1cc9898c2d14864dbba4575a89900cfed221a3d2
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = "tweedehands (+http://www.yourdomain.com)"
@@ -119,6 +148,9 @@ ITEM_PIPELINES = {
 # HTTPCACHE_STORAGE = "scrapy.extensions.httpcache.FilesystemCacheStorage"
 
 # Set settings whose default value is deprecated to a future-proof value
-REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
-TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
-FEED_EXPORT_ENCODING = "utf-8"
+
+# PLAYWRIGHT_BROWSER_TYPE = "firefox"
+# PLAYWRIGHT_LAUNCH_OPTIONS = {
+#     "headless": False,
+#     "timeout": 20 * 1000,  # 20 seconds
+# }

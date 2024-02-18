@@ -3,7 +3,7 @@
 ![Scrapy](https://img.shields.io/badge/scrapy-50962d?style=for-the-badge&logo=scrapy&logoColor=white)
 ![Playwright](https://img.shields.io/badge/Playwright-2b3137?style=for-the-badge&logo=playwright&logoColor=orange)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+![Selenium](https://img.shields.io/badge/-selenium-aeaeae?style=for-the-badge&logo=selenium&logoColor=white)
 
 
 ![Scrapy and Playwright](./assets/scrapy-playwright.png)
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 ### Add some saved searches
 Go to [2dehands.be](https://www.2dehands.be) log in and save some searches. You can find them in the 
-"Mijn Zoekopdracten" section.
+"Mijn Zoekopdrachten" section.
 
 ### Configure the environment variables
 
@@ -73,16 +73,19 @@ scrapy crawl tweedehands
 ```
 
 ### Result
-
-You can find the result in `data/data.jsonl` 
+You can find the result in `data/data.jsonl`
+You can look at [example_data.jsonl](/assets/example_data.jsonl)
+### Optional
+If you are also a `Geuze` fan, and you are also looking for `Geuze`, than you can activate the `GueuzeOnlyFilter` 
+in the `settings.py` file in the `FEEDS` section. Or go ahead and create your own filter.
 ## Screenshot
 ![Screenshot](./assets/my_searches.png)
 
 ## Why Playwright? Is Selenium left behind?
 Github stars don't say everything but they do give an indication of the popularity of a project. Below you can see the
 history of the `Scrapy` and `Playwright` projects and some of their siblings: `Selenium`. In my limited experience with 
-`Playwright` I found that `Playwright` is very easy to Install and use. No more wedrivers to manage and or install.
-It supports async which and is faster. The code code is more readable and easier and less tedious because there is an 
+`Playwright` I found that `Playwright` is very easy to Install and use. No more webdrivers to manage and or install.
+It supports async which is faster. The code is more readable and easier and less tedious because there is an 
 auto waiting for elements. Below I made 2 sample scripts that log in to reddit. 1 in `Selenium` and 1 in `Playwright`.
 ### Selenium code example
 ```python
@@ -139,9 +142,9 @@ asyncio.run(main())
 > When it comes to web crawling, Playwright truly "plays right" into developers' hands with its simplicity and power.
 
 Is Selenium left behind than? In a lot of ways yes. But Selenium still has its strength especially for software testing 
-as it has a broader support and a solid community and foundation. Also, alot of projects are already build on Selenium, 
+as it has a broader support and a solid community and foundation. Also, a lot of projects are already build on Selenium, 
 and turning a project that is head deep in Selenium will probably not compensate the benefits of Playwright. If you are 
-into web scraping So I would highly recommend playing around with Playwright.
+into web scraping than I would highly recommend playing around with Playwright.
 
 ## ⏱️ Timeline
 In the course of developing this project, I dedicated two full days not just to building but also to research 
@@ -153,19 +156,19 @@ crucial step of preparing: do your research first!. So I dived into this project
 half way the project from Selenium to Playwright.
 Note to self: Always do your research first! No matter how excited you are about a project!
 
-## Disclaimer
+## 🚫 Disclaimer
 The actions performed by the program do not abide by the robots.txt of 2dehands.be, this project is ment for educational 
 purpose only. Run at your own risk.
 
-## Possible issues
+## ⚡ Possible issues
 I had to log in to [2dehands.be](https://www.2dehands.be/) the first time with 2fa. But once it knows my IP the 2fa is not needed anymore and playwright could log in with 1 step.
 If you do think you are experiencing issues, make sure to check the screenshots' folder. It will have screenshot before and after the login.
 
-## Connect with me!
+## 🤝 Connect with me!
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gerrit-geeraerts-143488141)
 [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/10213635/gerrit-geeraerts)
 [![Ask Ubuntu](https://img.shields.io/badge/-Askubuntu-dd4814?style=for-the-badge&logo=ubuntu&logoColor=white)](https://askubuntu.com/users/1097288/gerrit-geeraerts)
 
-## Links
+## 🔗 Links
 
 [The Python Scrapy Playbook | ScrapeOps](https://scrapeops.io/python-scrapy-playbook/): I found lots of great info here.
